@@ -23,6 +23,7 @@ public class ProjectoFinal {
     Scanner entrada = new Scanner(System.in);
     char[][] tabla = new char[8][8];
     int ganador = 0;
+    int perder = 0;
     char puntero = tabla[4][4];
     for (int i = 0; i < tabla.length; i++) {
             for (int j = 0; j < tabla[0].length; j++) {
@@ -47,6 +48,7 @@ public class ProjectoFinal {
                     ganador++;
                 } else if (tabla[fila-1][columna]=='X') {
                     System.out.println("Entro en un obstaculo");
+                    perder++;
                     break;
                 }
                 fila--;
@@ -55,12 +57,13 @@ public class ProjectoFinal {
                 System.out.println("Perdiste carita sorprendida, cuidado con los bordes!");
             }
         } else if (comando.charAt(i) == 'S'|| comando.charAt(i) == 's') {
-            if (fila < 5) {
+            if (fila < 8) {
                 tabla[fila][columna]='O';
                 if (tabla[fila+1][columna]==' ') {
                     ganador++;
                 } else if (tabla[fila+1][columna]=='X') {
                     System.out.println("Entro en un obstaculo");
+                    perder++;
                     break;
                 }
                 fila ++;
@@ -75,6 +78,7 @@ public class ProjectoFinal {
                     ganador++;
                 } else if (tabla[fila][columna-1]=='X') {
                     System.out.println("Entro en un obstaculo");
+                    perder++;
                     break;
                 }
                 columna--;
@@ -83,11 +87,12 @@ public class ProjectoFinal {
             }
         } else if (comando.charAt(i) == 'D' || comando.charAt(i) == 'd') {
             tabla[fila][columna]='O';
-            if (columna < 5) {
+            if (columna < 8) {
                 if (tabla[fila][columna+1]==' ') {
                     ganador++;
                 } else if (tabla[fila][columna+1]=='X') {
                     System.out.println("Entro en un obstaculo");
+                    perder++;
                     break;
                 }
                 columna++;
@@ -99,9 +104,17 @@ public class ProjectoFinal {
         }
         tabla[fila][columna] = 'A';
         }
+       if (perder >0) {
+        System.out.println("Perdio el juego, no hay nada mas que hacer");
+        break;
+    } 
+    }
+    if (ganador > 44) {
+        System.out.println("Felicidades, relleno toda la matriz!");
     }
     
     ImprimirTabla(tabla);
+    
     }
     public static void ImprimirTabla(char[][] tabla) {
         

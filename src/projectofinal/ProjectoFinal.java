@@ -54,7 +54,7 @@ public class ProjectoFinal {
                 fila--;
             
             } else {
-                System.out.println("Perdiste carita sorprendida, cuidado con los bordes!");
+                
             }
         } else if (comando.charAt(i) == 'S'|| comando.charAt(i) == 's') {
             if (fila < 7) {
@@ -69,7 +69,7 @@ public class ProjectoFinal {
                 fila ++;
                 
             } else {
-                System.out.println("Lo que el dijo");
+                
             }
         } else if (comando.charAt(i) == 'A'|| comando.charAt(i) == 'a') {
             if (columna > 0) {
@@ -83,7 +83,7 @@ public class ProjectoFinal {
                 }
                 columna--;
             } else {
-                System.out.println("Lo que el volvio a decir");
+                
             }
         } else if (comando.charAt(i) == 'D' || comando.charAt(i) == 'd') {
             tabla[fila][columna]='O';
@@ -97,7 +97,7 @@ public class ProjectoFinal {
                 }
                 columna++;
             } else {
-                System.out.println("Lo que volvio a decir otra vez");
+                
             }
         } else {
             System.out.println("Ingrese un comando valido.");

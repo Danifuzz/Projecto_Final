@@ -57,7 +57,7 @@ public class ProjectoFinal {
                 System.out.println("Perdiste carita sorprendida, cuidado con los bordes!");
             }
         } else if (comando.charAt(i) == 'S'|| comando.charAt(i) == 's') {
-            if (fila < 8) {
+            if (fila < 7) {
                 tabla[fila][columna]='O';
                 if (tabla[fila+1][columna]==' ') {
                     ganador++;
@@ -87,7 +87,7 @@ public class ProjectoFinal {
             }
         } else if (comando.charAt(i) == 'D' || comando.charAt(i) == 'd') {
             tabla[fila][columna]='O';
-            if (columna < 8) {
+            if (columna < 7) {
                 if (tabla[fila][columna+1]==' ') {
                     ganador++;
                 } else if (tabla[fila][columna+1]=='X') {

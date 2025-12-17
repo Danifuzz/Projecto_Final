@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class ProjectoFinal {
     public static int fila = 4;
     public static int columna = 4;
-    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RESET = "\u001B[0m"; //colores, inspirado en el laboratorio.
     public static final  String ANSI_BLUE = "\u001B[34m";
     public static final   String ANSI_RED = "\u001B[31m";
     /**
@@ -29,10 +29,10 @@ public class ProjectoFinal {
             tabla[i][j]= ' '; 
             }
     }
-    while (ganador<26) {
+    while (ganador<45) { //45 siendo la cantidad de espacios disponibles en la matriz
         ImprimirTabla(tabla);
         System.out.println("Ingrese a donde quiere moverse:");
-        System.out.println("W = Arriba \n"
+        System.out.println("W = Arriba \n" // formato de movimiento WASD, tambien puedes usar un string como comando
                 + "S = Abajo \n"
                 + "A = Izquierda \n"
                 + "D = Derecha");
@@ -43,7 +43,7 @@ public class ProjectoFinal {
         if (comando.charAt(i) == 'W' || comando.charAt(i) == 'w') {
             if (fila > 0) {
                 tabla[fila][columna] = 'O';
-                if (tabla[fila-1][columna]==' ') {
+                if (tabla[fila-1][columna]==' ') { // asi sabre si coloreas un espacio ya vacio
                     ganador++;
                 } else if (tabla[fila-1][columna]=='X') {
                     System.out.println("Entro en un obstaculo");
